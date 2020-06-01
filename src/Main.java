@@ -14,6 +14,19 @@ public class Main {
 	int intp = 1;
 	int Int = 1;
 	int str = 1;
+	int darah = 0;
+	
+	double check(Pemain kelas) {
+		double a = 0;
+		if(darah == 0) {
+			 a = kelas.getHP();
+		}
+		else {
+			a = 0;
+			a = darah;
+		}
+		return a;
+	}
 	
 	void lvlup(Pemain kelas){
 		if(kelas instanceof Mage) {
@@ -46,14 +59,16 @@ public class Main {
 			mon = new Zombie(str, Int);
 			mon.Stat();
 		}
+		
 		kelas.Stat();
 		
 		double health =  mon.getHP();
-		double hea = kelas.getHP();
+		double hea = check(kelas);
 		double MD = 0;
 		double MM = 0;
 		double PD = 0;
 		double PM = 0;
+		
 		
 		if(kelas.getAttack() > mon.getDefense()) {
 			PD = kelas.getAttack() - mon.getDefense();
@@ -113,7 +128,14 @@ public class Main {
 		
 	}
 	while(hea > 0 && health > 0);
-	//lvlup(kelas);
+	if(health <=0) {
+		lvlup(kelas);
+	}
+	else {
+		System.out.println("You lose");
+	}
+	 	darah = 0;
+		darah += hea;
 	}
 	
 	public Main() {

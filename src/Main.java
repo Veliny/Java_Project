@@ -16,10 +16,10 @@ public class Main {
 	int str = 1;
 	int darah = 0;
 	
-	double check(Pemain kelas) {
-		double a = 0;
+	int check(Pemain kelas) {
+		int a = 0;
 		if(darah == 0) {
-			 a = kelas.getHP();
+			 a = (int) kelas.getHP();
 		}
 		else {
 			a = 0;
@@ -101,9 +101,11 @@ public class Main {
 		}
 		if(pilih == 1) {
 			health -= PD;
+			System.out.printf("kamu menyerang sebesar %.2f\n",PD);
 		}
 		else if(pilih ==2) {
 			health -= PM;
+			System.out.printf("kamu menyerang sebesar %.2f\n",PM);
 		}
 		else if (pilih == 4) {
 			int a = ran(10);
@@ -117,9 +119,11 @@ public class Main {
 		if(kelas.getEvade() < eva) {
 		if(j == 1) {
 			hea -= MD;
+			System.out.printf("kamu terkena serangan sebesar %.2f\n",MD);
 		}
 		else{
 			hea -= MM;
+			System.out.printf("kamu terkena serangan sebesar %.2f\n",MM);
 		}
 		}
 		else {
